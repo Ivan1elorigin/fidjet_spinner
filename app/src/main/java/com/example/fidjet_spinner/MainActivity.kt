@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val button=findViewById<Button>(R.id.button)
         val spinner=findViewById<Spinner>(R.id.spinner)
         val lista = arrayOf("sumar", "restar", "multiplicar",
-            "dividir", "potencia", "factorial")
+            "dividir", "potencia", "factorial", "raiz_cuadrada")
         val adaptador1 = ArrayAdapter<String>(this,
             android.R.layout.simple_spinner_item, lista)
         spinner.adapter = adaptador1
@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
                 "dividir" -> tv1.text = "Resultado: ${et1.text.toString().toInt() / et2.text.toString().toInt()}"
                 "potencia" -> tv1.text = "Resultado: ${Math.pow(et1.text.toString().toDouble(), et2.text.toString().toDouble())}"
                 "factorial" -> tv1.text = "Resultado: ${factorialIterativo(et1.text.toString().toInt())}"
+                "raiz_cuadrada" -> tv1.text = "Resultado: ${Math.sqrt(et1.text.toString().toDouble())}"
 
             }
         }
